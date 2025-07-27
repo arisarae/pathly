@@ -5,6 +5,7 @@ import PublicNavbar from '@/components/Navbar/Public'; // Sesuaikan path ini
 import Footer from '@/components/Footer'; // Sesuaikan path ini
 import MainFeatures from '@/components/MainFeatures';
 import CaraKerja from '@/components/CaraKerja';
+import LastSection from '@/components/LastSection';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <MainFeatures/>
       <CaraKerja/>
+      <LastSection/>
       <Footer /> {/* Komponen Footer */}
     </main>
   );
