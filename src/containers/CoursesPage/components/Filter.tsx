@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Button from "../Buttons";
+import Button from "../../../components/Buttons";
 
 type FilterState = {
   Type: string[];
@@ -19,11 +19,11 @@ const Filter: React.FC<FilterProps> = ({
   filterOptions,
 }) => {
   const [localFilters, setLocalFilters] = useState<FilterState>(filters);
-  
+
   useEffect(() => {
     setLocalFilters(filters);
   }, [filters]);
-  
+
   const handleCheckbox = (category: keyof FilterState, value: string) => {
     const isSelected = localFilters[category].includes(value);
     const updatedCategory = isSelected

@@ -1,5 +1,5 @@
 import React from "react";
-import RecCard from "../RecCard";
+import CourseCard from "./CourseCard";
 import { CourseWithMeta } from "@/types/course";
 
 interface PaginationProps {
@@ -69,7 +69,8 @@ const Pagination: React.FC<PaginationProps> = ({
         <div>
           <h2 className="text-2xl font-bold mb-1">Course Catalog</h2>
           <p className="text-sm text-gray-600">
-            Showing {startIndex + 1}-{Math.min(endIndex, courses.length)} of {courses.length} courses
+            Showing {startIndex + 1}-{Math.min(endIndex, courses.length)} of{" "}
+            {courses.length} courses
           </p>
         </div>
         {totalPages > 1 && (
@@ -81,7 +82,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
       <div className="w-fit flex flex-row flex-wrap gap-[36px] mb-8">
         {currentCourses.map((course, index) => (
-          <RecCard
+          <CourseCard
             key={`${course.Title}-${startIndex + index}`}
             recommendation={course}
           />

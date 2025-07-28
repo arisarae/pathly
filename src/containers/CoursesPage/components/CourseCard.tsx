@@ -1,11 +1,11 @@
-import Button from "../Buttons";
-import { Course, CourseWithMeta } from "@/types/course";
+import Button from "../../../components/Buttons";
+import { CourseWithMeta } from "@/types/course";
 
 interface cardProps {
   recommendation: CourseWithMeta;
 }
 
-const RecCard: React.FC<cardProps> = ({ recommendation }) => {
+const CourseCard: React.FC<cardProps> = ({ recommendation }) => {
   return (
     <div className="w-[345px] h-fit text-black font-geologica">
       <div className="w-full h-fit min-h-[140px] p-[20px] bg-white rounded-t-[14px] border border-[#445FAC] border-b-[0px] flex flex-col gap-[10px] justify-center">
@@ -39,4 +39,4 @@ const RecCard: React.FC<cardProps> = ({ recommendation }) => {
   );
 };
 
-export default RecCard;
+export default CourseCard;
