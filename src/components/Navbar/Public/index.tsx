@@ -24,12 +24,12 @@ const PublicNavbar = () => {
         <Button
           variant="white"
           label="Sign In"
-          className="px-[16px] py-[12px] text-[14px]"
+          className="w-max px-[16px] py-[12px] text-[14px] font-semibold"
         />
         <Button
           variant="blue"
           label="Get Started"
-          className="px-[16px] py-[12px] text-[14px]"
+          className="w-max px-[16px] py-[12px] text-[14px] font-semibold"
         />
       </div>
     </nav>
