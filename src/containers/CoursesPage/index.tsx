@@ -52,9 +52,9 @@ export default function CoursesPage() {
       );
 
     return {
-      Type: getUnique("Certificate_Type"),
+      Type: getUnique("certificate_type"),
       Interest: getUnique("subcategory"),
-      "Difficulty Level": getUnique("Level"),
+      "Difficulty Level": getUnique("level"),
     };
   }, [allCourses]);
 
@@ -62,10 +62,10 @@ export default function CoursesPage() {
     return allCourses.filter((course) => {
       const { Type, Interest, "Difficulty Level": Level } = currentFilters;
       const matchesType =
-        Type.length === 0 || Type.includes(course.Certificate_Type);
+        Type.length === 0 || Type.includes(course.certificate_type);
       const matchesInterest =
         Interest.length === 0 || Interest.includes(course.subcategory);
-      const matchesLevel = Level.length === 0 || Level.includes(course.Level);
+      const matchesLevel = Level.length === 0 || Level.includes(course.level);
       return matchesType && matchesInterest && matchesLevel;
     });
   }, [allCourses, currentFilters]);

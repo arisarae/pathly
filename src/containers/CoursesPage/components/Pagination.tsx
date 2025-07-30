@@ -83,7 +83,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <div className="w-fit flex flex-row flex-wrap gap-[36px] mb-8">
         {currentCourses.map((course, index) => (
           <CourseCard
-            key={`${course.Title}-${startIndex + index}`}
+            key={`${course.title}-${startIndex + index}`}
             recommendation={course}
           />
         ))}

@@ -9,7 +9,7 @@ const CourseCard: React.FC<cardProps> = ({ recommendation }) => {
   return (
     <div className="w-[345px] h-fit text-black font-geologica">
       <div className="w-full h-fit min-h-[140px] p-[20px] bg-white rounded-t-[14px] border border-[#445FAC] border-b-[0px] flex flex-col gap-[10px] justify-center">
-        <p className="text-[20px] font-medium">{recommendation?.Title}</p>
+        <p className="text-[20px] font-medium">{recommendation?.title}</p>
         <p className="text-[18px] font-extralight">
           {recommendation.subcategory}
         </p>
@@ -18,14 +18,14 @@ const CourseCard: React.FC<cardProps> = ({ recommendation }) => {
         <div className="flex flex-row gap-[50px]">
           <div className="w-[130px]">
             <p className="text-[#111827] text-[16px] font-extralight">Level</p>
-            <p className="text-[20px] font-normal">{recommendation?.Level}</p>
+            <p className="text-[20px] font-normal">{recommendation?.level}</p>
           </div>
           <div>
             <p className="text-[#111827] text-[16px] font-extralight">
               Duration
             </p>
             <p className="text-[20px] font-normal">
-              {recommendation?.Duration}
+              {recommendation?.duration}
             </p>
           </div>
         </div>

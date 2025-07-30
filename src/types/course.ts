@@ -1,11 +1,15 @@
 export interface Course {
-  Title: string;
-  Rating: number;
-  Reviews: string | null;
-  Level: string;
-  Duration: string;
-  Certificate_Type: string;
-  weighted_score: number | null;
+  course_index: number;
+  title: string;
+  skills_clean: string;
+  skills_clean_list: string[];
+  rating: number;
+  reviews: string | null;
+  level: string;
+  duration: string;
+  certificate_type: string;
+  course_link: string;
+  score: number | null;
 }
 
 export type CourseCategory = {
@@ -13,15 +17,15 @@ export type CourseCategory = {
 };
 
 export type CourseData = {
-  Beginner_Course: CourseCategory;
-  Beginner_Specialization: CourseCategory;
-  Beginner_Professional_Certificate: CourseCategory;
-  Intermediate_Course: CourseCategory;
-  Intermediate_Specialization: CourseCategory;
-  Intermediate_Professional_Certificate: CourseCategory;
-  Advanced_Course: CourseCategory;
-  Advanced_Specialization: CourseCategory;
-  Advanced_Professional_Certificate: CourseCategory;
+  beginner_course: CourseCategory;
+  beginner_specialization: CourseCategory;
+  beginner_professional_certificate: CourseCategory;
+  intermediate_course: CourseCategory;
+  intermediate_specialization: CourseCategory;
+  intermediate_professional_certificate: CourseCategory;
+  advanced_course: CourseCategory;
+  advanced_specialization: CourseCategory;
+  advanced_professional_certificate: CourseCategory;
 };
 
 export interface CourseWithMeta extends Course {
