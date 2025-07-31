@@ -1,4 +1,4 @@
-import AuthNavbar from "@/components/Navbar/Auth";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import coursesData from "@/data/Course";
 import Banner from "@/components/Banner";
@@ -29,7 +29,7 @@ export default function CourseDetailPage({ course_index }: {course_index: string
 
   return (
     <div className="">
-      <AuthNavbar />
+      <Navbar />
       <main>
         <Banner className="h-[257px]">
           <div className=" flex flex-row px-[120px] w-screen h-fit justify-between items-center">

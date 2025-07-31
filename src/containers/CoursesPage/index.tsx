@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import AuthNavbar from "@/components/Navbar/Auth";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Filter from "@/containers/CoursesPage/components/Filter";
 import Pagination from "@/containers/CoursesPage/components/Pagination";
@@ -91,7 +91,7 @@ export default function CoursesPage() {
 
   return (
     <div>
-      <AuthNavbar />
+      <Navbar />
       <Banner className="h-[257px]">
         <p className="text-center font-geologica font-normal text-[36px] text-black whitespace-pre-line">
           {"Explore your Course\nin Here!"}

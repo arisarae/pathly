@@ -1,11 +1,11 @@
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
-import AuthNavbar from "@/components/Navbar/Auth";
+import Navbar from "@/components/Navbar";
 
-export default function AssesmentWrapper() {
+export default function AssessmentWrapper() {
   return (
     <>
-      <AuthNavbar />
+      <Navbar />
       <main>
         <Banner className="h-[50vh] font-geologica content-center justify-items-center text-center">
           <h1 className="font-medium text-[#00020E] text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4">

@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import AuthNavbar from '@/components/Navbar/Auth'; // Jika kamu ingin Navbar khusus untuk yang sudah login
+import Navbar from '@/components/Navbar'; // Jika kamu ingin Navbar khusus untuk yang sudah login
 import { getCurrentUser, logoutUser } from '@/lib/auth';
 
 export default function DashboardPage() {
