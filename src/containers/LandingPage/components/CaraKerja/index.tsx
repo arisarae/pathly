@@ -19,9 +19,8 @@ const StepItem: React.FC<StepItemProps> = ({ stepNumber, title, description, ima
     <div className={`
       flex flex-col md:flex-row
       items-center justify-between
-      gap-8 md:gap-16 lg:gap-20 // Jarak antar teks dan gambar
       py-10 md:py-12 lg:py-16 // Padding vertikal setiap step
-      ${reverseLayout ? 'md:flex-row-reverse' : ''} // Membalik layout di layar medium ke atas
+      ${reverseLayout ? 'md:flex-row-reverse gap-8 md:gap-16 lg:gap-20' : 'gap-0'} // Membalik layout di layar medium ke atas
       w-full max-w-6xl // Batasan lebar
     `}>
       {/* Kolom Teks */}
@@ -73,27 +72,28 @@ const CaraKerja: React.FC = () => {
   const steps = [
     {
       stepNumber: 1,
-      title: 'Create Your Profile',
-      description: 'Tell us about your goals and skills. It takes less than 3 minutes.',
-      imageSrc: '/images/how-it-works-step1.jpg', // Path ke gambar langkah 1
-      imageAlt: 'Profile creation form illustration',
-      reverseLayout: false, // Teks di kiri, gambar di kanan
+      title: "Create Your Profile",
+      description:
+        "Tell us about your goals and skills. It takes less than 3 minutes.",
+      imageSrc: "/screenshot/profile.svg", // Path ke gambar langkah 1
+      imageAlt: "Profile creation form illustration",
+      reverseLayout: true, // Teks di kanan, gambar di kiri
     },
     {
       stepNumber: 2,
-      title: 'Get Recommendations',
-      description: 'Our AI finds the best paths and courses.',
-      imageSrc: '/images/how-it-works-step2.jpg', // Path ke gambar langkah 2
-      imageAlt: 'Course recommendation illustration',
-      reverseLayout: true, // Teks di kanan, gambar di kiri (dibalik)
+      title: "Get Recommendations",
+      description: "Our AI finds the best paths and courses.",
+      imageSrc: "/screenshot/recommendation.svg", // Path ke gambar langkah 2
+      imageAlt: "Course recommendation illustration",
+      reverseLayout: false, // Teks di kiri, gambar di kanan (dibalik)
     },
     {
       stepNumber: 3,
-      title: 'Start Learning',
-      description: 'Follow links to top providers.',
-      imageSrc: '/images/how-it-works-step3.jpg', // Path ke gambar langkah 3
-      imageAlt: 'Certificate and course details illustration',
-      reverseLayout: false, // Teks di kiri, gambar di kanan
+      title: "Start Learning",
+      description: "Follow links to top providers.",
+      imageSrc: "/screenshot/learning.svg", // Path ke gambar langkah 3
+      imageAlt: "Certificate and course details illustration",
+      reverseLayout: true, // Teks di kanan, gambar di kiri
     },
   ];
 
@@ -105,10 +105,10 @@ const CaraKerja: React.FC = () => {
       flex flex-col items-center // Menengahkan konten
     ">
       <h2 className="
-        text-4xl md:text-5xl lg:text-6xl // Ukuran judul utama
-        font-extrabold
-        text-[#2C3E50] // Warna teks
-        mb-12 md:mb-16 lg:mb-20 // Margin bawah judul
+        text-4xl md:text-5xl // Ukuran judul utama
+        font-geologica font-medium
+        text-black // Warna teks
+        mb-5 md:mb-8 lg:mb-10 // Margin bawah judul
         text-center
       ">
         How It Works

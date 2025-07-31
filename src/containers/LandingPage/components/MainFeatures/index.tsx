@@ -1,5 +1,3 @@
-// src/components/MainFeatures/index.tsx (atau di lokasi yang sesuai)
-
 import React from 'react';
 import Image from 'next/image'; // Asumsi menggunakan Next.js Image component
 
@@ -24,6 +22,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ iconSrc, title, description, 
       max-w-xs // Batasan lebar kartu
       hover:shadow-xl // Efek hover
       transition-all duration-300 ease-in-out
+      font-geologica
     ">
       <div className="
         w-20 h-20 md:w-24 md:h-24 // Ukuran container ikon responsif
@@ -42,15 +41,16 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ iconSrc, title, description, 
       </div>
       <h3 className="
         text-xl md:text-2xl // Ukuran judul responsif
-        font-bold
-        text-[#2C3E50] // Warna teks judul
+        font-medium
+        text-[#111827] // Warna teks judul
         mb-3 // Margin bawah judul
       ">
         {title}
       </h3>
       <p className="
         text-base md:text-lg // Ukuran deskripsi responsif
-        text-gray-600 // Warna teks deskripsi
+        font-extralight
+        text-[#4B4B4B] // Warna teks deskripsi
         leading-relaxed // Jarak antar baris
       ">
         {description}
@@ -89,8 +89,13 @@ const MainFeatures: React.FC = () => {
       bg-gray-50 // Warna background section (bisa disesuaikan)
       flex flex-col items-center // Menengahkan konten
     ">
-      {/* Jika ada judul bagian ini, bisa ditambahkan di sini, misal: */}
-      {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#2C3E50]">Our Main Features</h2> */}
+      <h2 className="
+        text-4xl md:text-5xl 
+        font-geologica font-medium 
+        text-center mb-12 text-black
+      ">
+        Our Main Features
+      </h2>
 
       <div className="
         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 // Tata letak responsif (1 kolom -> 2 -> 3)

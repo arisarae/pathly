@@ -3,7 +3,7 @@ import Button from "@/components/Buttons";
 
 const PublicNavbar = () => {
   return (
-    <nav className="w-screen h-[80px] px-[120px] py-[16px] bg-background text-[#6B7280] text-base font-inter flex flex-row justify-between items-center sticky top-0">
+    <nav className="w-screen h-[80px] px-[120px] py-[16px] bg-background text-[#6B7280] text-base font-inter flex flex-row justify-between items-center sticky top-0 z-50">
       <Image
         width={500}
         height={500}
