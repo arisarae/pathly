@@ -1,12 +1,13 @@
 import CourseDetailPage from "@/containers/DetailPage";
-import { FC } from "react";
 
 interface PageProps {
-  params: {course_index: string;};
+  params: Promise<{ course_index: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
-const CoursesWrapper: FC<PageProps> = ({ params }) => {
-  return <CourseDetailPage course_index={params.course_index} />;
+export default async function CoursesWrapper({ params }: PageProps) {
+  const { course_index } = await params;
+  return <CourseDetailPage course_index={course_index} />;
 };
 
-export default CoursesWrapper;
+
