@@ -7,7 +7,7 @@ const PublicNavbar = () => {
       <Image
         width={500}
         height={500}
-        src="./logo/coloredLogo.svg"
+        src="/logo/coloredLogo.svg"
         alt="Pathly"
         style={{
           height: "35px",

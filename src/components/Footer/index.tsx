@@ -8,7 +8,7 @@ const Footer = () => {
           <Image
             width={500}
             height={500}
-            src="./logo/whiteLogo.svg"
+            src="/logo/whiteLogo.svg"
             alt="Pathly"
             style={{
               height: "40px",
