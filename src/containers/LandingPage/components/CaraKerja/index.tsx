@@ -1,5 +1,3 @@
-// src/components/CaraKerja/index.tsx (atau di lokasi yang sesuai)
-
 import React from 'react';
 import Image from 'next/image'; // Asumsi menggunakan Next.js Image component
 

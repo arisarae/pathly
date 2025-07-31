@@ -1,5 +1,3 @@
-// src/components/LastSection/index.tsx (atau di lokasi yang sesuai)
-
 import React from 'react';
 
 const LastSection: React.FC = () => {
@@ -43,7 +41,7 @@ const LastSection: React.FC = () => {
         transition duration-300 ease-in-out // Transisi saat hover
         text-lg md:text-xl // Ukuran teks tombol
       ">
-        Let's Get Started!
+        Lets Get Started!
       </button>
     </section>
   );

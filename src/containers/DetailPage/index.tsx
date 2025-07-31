@@ -95,11 +95,11 @@ export default function CourseDetailPage({ course_index }: {course_index: string
         <div className="h-fit flex flex-col gap-[24px] px-[100px] py-[60px]">
           <div className="w-fill h-fit space-y-[10px]">
             <h2 className="text-black font-medium font-geologica text-[24px]">
-              Key Skill You'll Gain
+              Key Skill You Will Gain
             </h2>
             <div className="flex flex-row flex-wrap gap-[8px]">
-              {course.skills_clean_list.map((skill) => (
-                <div className="bg-[#D9E3FF] w-fit h-fit px-[25px] rounded-[14px] text-[#445FAC] font-normal font-inter text-[16px]">
+              {course.skills_clean_list.map((skill, index) => (
+                <div key={index} className="bg-[#D9E3FF] w-fit h-fit px-[25px] rounded-[14px] text-[#445FAC] font-normal font-inter text-[16px]">
                   {skill}
                 </div>
               ))}
