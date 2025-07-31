@@ -6,7 +6,7 @@ const AuthNavbar = () => {
       <Image
         width={500}
         height={500}
-        src="./logo/coloredLogo.svg"
+        src="/logo/coloredLogo.svg"
         alt="Pathly"
         style={{
           height: "35px",
@@ -23,7 +23,7 @@ const AuthNavbar = () => {
         <Image
           width={500}
           height={500}
-          src="./icons/bell.svg"
+          src="/icons/bell.svg"
           alt="Notification"
           style={{
             height: "24px",

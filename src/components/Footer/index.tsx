@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-[#445FAC] px-[200px] pt-[100px] pb-[60px] gap-[80px]">
+    <footer className="flex flex-col bg-[#445FAC] px-[200px] pt-[100px] pb-[60px] gap-[80px] text-white">
       <div className="w-full flex flex-row justify-between">
         <div className="flex flex-col w-[350px] h-fit gap-[35px]">
           <Image
             width={500}
             height={500}
-            src="./logo/whiteLogo.svg"
+            src="/logo/whiteLogo.svg"
             alt="Pathly"
             style={{
               height: "40px",
