@@ -49,7 +49,7 @@ const Filter: React.FC<FilterProps> = ({
       </h2>
       <div className="h-fit w-fit rounded-[20px] px-[20px] py-[40px] flex flex-col gap-[24px] bg-[#BEC9E6]">
         {Object.entries(filterOptions).map(([cat, options]) => (
-          <div key={cat} className="h-fit w-fill">
+          <div key={cat} className="h-fit">
             <h3 className="font-semibold text-[20px] text-black font-inter">
               {cat}
             </h3>

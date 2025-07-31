@@ -64,10 +64,10 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className="flex-1 p-6 w-fit">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="flex flex-col p-6 min-w-[446px] 3xl:w-[1107px] 2xl:w-[726px]">
+      <div className="w-auto mb-6 flex items-center justify-between min-w-[446px] 3xl:w-[1107px] 2xl:w-[726px]">
         <div>
-          <h2 className="text-2xl font-bold mb-1">Course Catalog</h2>
+          <h2 className="text-2xl font-bold mb-1">Recommendations</h2>
           <p className="text-sm text-gray-600">
             Showing {startIndex + 1}-{Math.min(endIndex, courses.length)} of{" "}
             {courses.length} courses
@@ -80,7 +80,7 @@ const Pagination: React.FC<PaginationProps> = ({
         )}
       </div>
 
-      <div className="w-fit flex flex-row flex-wrap gap-[36px] mb-8">
+      <div className="w-fit flex flex-row flex-wrap gap-[36px] mb-5 min-w-[446px] 3xl:w-[1107px] 2xl:w-[726px] justify-center">
         {currentCourses.map((course, index) => (
           <CourseCard
             key={`${course.title}-${startIndex + index}`}
@@ -89,8 +89,28 @@ const Pagination: React.FC<PaginationProps> = ({
         ))}
       </div>
 
+      {totalPages > 10 && (
+        <div className="mb-7 flex items-center justify-start space-x-2 text-m min-w-[446px] 3xl:w-[1107px] 2xl:w-[726px]">
+          <span className="text-gray-600">Quick jump:</span>
+          <input
+            type="number"
+            min="1"
+            max={totalPages}
+            value={currentPage}
+            onChange={(e) => {
+              const page = parseInt(e.target.value);
+              if (!isNaN(page) && page >= 1 && page <= totalPages) {
+                onPageChange(page);
+              }
+            }}
+            className="w-16 px-2 py-1 text-center border border-gray-300 rounded"
+          />
+          <span className="text-gray-600">of {totalPages}</span>
+        </div>
+      )}
+
       {totalPages > 1 && (
-        <div className="flex items-center justify-center space-x-2">
+        <div className="flex items-center justify-center space-x-2 3xl:w-[1107px] 2xl:w-[726px]">
           <button
             onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
             disabled={currentPage === 1}
@@ -109,7 +129,6 @@ const Pagination: React.FC<PaginationProps> = ({
             </svg>
             Previous
           </button>
-
           <div className="flex space-x-1">
             {getPaginationNumbers().map((pageNum, index) => (
               <React.Fragment key={index}>
@@ -130,7 +149,6 @@ const Pagination: React.FC<PaginationProps> = ({
               </React.Fragment>
             ))}
           </div>
-
           <button
             onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
             disabled={currentPage === totalPages}
@@ -149,26 +167,6 @@ const Pagination: React.FC<PaginationProps> = ({
               />
             </svg>
           </button>
-        </div>
-      )}
-
-      {totalPages > 10 && (
-        <div className="mt-4 flex items-center justify-center space-x-2 text-sm">
-          <span className="text-gray-600">Quick jump:</span>
-          <input
-            type="number"
-            min="1"
-            max={totalPages}
-            value={currentPage}
-            onChange={(e) => {
-              const page = parseInt(e.target.value);
-              if (!isNaN(page) && page >= 1 && page <= totalPages) {
-                onPageChange(page);
-              }
-            }}
-            className="w-16 px-2 py-1 text-center border border-gray-300 rounded"
-          />
-          <span className="text-gray-600">of {totalPages}</span>
         </div>
       )}
     </div>

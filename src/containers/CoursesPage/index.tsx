@@ -92,8 +92,12 @@ export default function CoursesPage() {
   return (
     <div>
       <AuthNavbar />
-      <Banner label={"Explore your Course\nin Here!"} className="h-[257px]" />
-      <main className="flex flex-row gap-[60px] p-[80px]">
+      <Banner className="h-[257px]">
+        <p className="text-center font-geologica font-normal text-[36px] text-black whitespace-pre-line">
+          {"Explore your Course\nin Here!"}
+        </p>
+      </Banner>
+      <main className="flex flex-row gap-[60px] p-[80px] justify-center">
         <Filter
           filters={currentFilters}
           setFilters={handleFilterChange}
