@@ -7,10 +7,6 @@ import { CourseWithMeta } from "@/types/course";
 import Image from "next/image";
 import Link from "next/link";
 
-interface courseProps {
-  course_index: string;
-}
-
 const getAllCourses = (): CourseWithMeta[] => {
   return Object.entries(coursesData).flatMap(([category, subcats]) =>
     Object.entries(subcats).flatMap(([subcat, courses]) =>
@@ -23,7 +19,7 @@ const getAllCourses = (): CourseWithMeta[] => {
   );
 };
 
-export default function CourseDetailPage({ course_index }: courseProps) {
+export default function CourseDetailPage({ course_index }: {course_index: string}) {
   const id = parseInt(course_index);
   const course = getAllCourses().find((c) => c.course_index === id);
 
