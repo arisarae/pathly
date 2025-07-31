@@ -1,83 +1,45 @@
-// src/lib/auth.ts
+import Image from "next/image";
+import Link from "next/link";
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Peringatan Keamanan: Penggunaan localStorage untuk otentikasi
-// TIDAK AMAN untuk aplikasi produksi. Informasi kredensial dapat diakses
-// oleh skrip berbahaya (XSS attacks). Ini hanya untuk tujuan demonstrasi/pembelajaran.
-// Untuk aplikasi nyata, gunakan Backend Authentication (JWT, sesi, OAuth, dll.).
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-interface User {
-  username: string;
-  email: string;
-  fullName: string;
-  password?: string; // Password tidak seharusnya disimpan di sisi klien, tapi untuk demo ini
+export default function SignInWrapper() {
+  return (
+    <main className="h-screen w-screen flex flex-row">
+      <div className="text-center w-[50vw] p-[48px] bg-conic from-[#445FAC] to-[#7E92CC] content-center justify-items-center font-inter">
+        <div className="w-fit h-fit mb-[20px]">
+          <p className="text-[#E0E7FF] text-[16px] font-inter font-medium mb-[3px]">
+            Welcome Back to
+          </p>
+          <Image
+            width={500}
+            height={500}
+            src="/logo/whiteLogo.svg"
+            alt="Pathly"
+            style={{
+              height: "38px",
+              width: "fit-content",
+            }}
+          />
+        </div>
+        <div className="max-w-[400px]">
+          <h2 className="text-[#E0E7FF] text-[28px] font-inter font-semibold mb-[10px]">
+            Continue your journey
+          </h2>
+          <p className="text-[#C7D2FE] text-[16px] font-inter font-normal">
+            {`Sign in to access your personalized dashboard\nand continue where you left off.`}
+          </p>
+        </div>
+      </div>
+      <div className="w-[50vw] p-[48px] font-geologica content-center justify-items-center text-center">
+        <h1 className="font-medium text-[#22315D] text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-4">
+          Sorry, this feature is currently unavailable.
+        </h1>
+        <Link
+          href="/"
+          className="font-extralight text-[#6B7280] text-base md:text-lg lg:text-xl underline underline-offset-2"
+        >
+          {`Return back home >`}
+        </Link>
+      </div>
+    </main>
+  );
 }
-
-// Fungsi untuk menyimpan user baru ke localStorage
-export const registerUser = (user: User): { success: boolean; message: string } => {
-  // Pastikan kode ini hanya berjalan di sisi klien (browser)
-  if (typeof window === 'undefined') {
-    return { success: false, message: "This operation is only available in browser." };
-  }
-
-  const usersString = localStorage.getItem('users');
-  const users: User[] = usersString ? JSON.parse(usersString) : [];
-
-  // Cek apakah username atau email sudah terdaftar
-  const existingUser = users.find(
-    (u) => u.username.toLowerCase() === user.username.toLowerCase() || u.email.toLowerCase() === user.email.toLowerCase()
-  );
-
-  if (existingUser) {
-    return { success: false, message: 'Username or Email already exists.' };
-  }
-
-  // Simpan user baru
-  const userToSave = { ...user }; // Clone object untuk menghindari mutasi langsung
-  users.push(userToSave);
-  localStorage.setItem('users', JSON.stringify(users));
-
-  return { success: true, message: 'Registration successful!' };
-};
-
-// Fungsi untuk login user dari localStorage
-export const loginUser = (emailOrUsername: string, password: string): { success: boolean; message: string; user?: Omit<User, 'password'> } => {
-  if (typeof window === 'undefined') {
-    return { success: false, message: "This operation is only available in browser." };
-  }
-
-  const usersString = localStorage.getItem('users');
-  const users: User[] = usersString ? JSON.parse(usersString) : [];
-
-  // Cari user berdasarkan email/username dan password
-  const userFound = users.find(
-    (u) => (u.email.toLowerCase() === emailOrUsername.toLowerCase() || u.username.toLowerCase() === emailOrUsername.toLowerCase()) && u.password === password
-  );
-
-  if (userFound) {
-    // Jangan pernah menyimpan atau mengembalikan password ke UI
-    const { password, ...userWithoutPassword } = userFound;
-    localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword)); // Simpan user yang sedang login
-    return { success: true, message: 'Login successful!', user: userWithoutPassword };
-  } else {
-    return { success: false, message: 'Invalid credentials.' };
-  }
-};
-
-// Fungsi untuk mendapatkan user yang sedang login dari localStorage
-export const getCurrentUser = (): Omit<User, 'password'> | null => {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-  const userString = localStorage.getItem('currentUser');
-  return userString ? JSON.parse(userString) : null;
-};
-
-// Fungsi untuk logout user (menghapus data sesi dari localStorage)
-export const logoutUser = (): void => {
-  if (typeof window === 'undefined') {
-    return;
-  }
-  localStorage.removeItem('currentUser');
-};
