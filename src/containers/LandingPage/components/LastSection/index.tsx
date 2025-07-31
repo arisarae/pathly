@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const LastSection: React.FC = () => {
@@ -30,19 +31,21 @@ const LastSection: React.FC = () => {
       ">
         Join thousands of professionals who have transformed their careers with Pathly.
       </p>
-      <button className="
-        bg-[#445FAC] // Warna background tombol
-        hover:bg-[#34495E] // Warna hover tombol
-        text-white // Warna teks tombol
-        font-medium font-geologica
-        py-3 px-5 md:py-4 md:px-8 // Padding tombol responsif
-        rounded-lg // Sudut melengkung
-        shadow-lg // Bayangan tombol
-        transition duration-300 ease-in-out // Transisi saat hover
-        text-lg md:text-xl // Ukuran teks tombol
-      ">
-        Lets Get Started!
-      </button>
+      <Link href={"/auth/signin"}>
+        <button className="
+          bg-[#445FAC] // Warna background tombol
+          hover:bg-[#34495E] // Warna hover tombol
+          text-white // Warna teks tombol
+          font-medium font-geologica
+          py-3 px-5 md:py-4 md:px-8 // Padding tombol responsif
+          rounded-lg // Sudut melengkung
+          shadow-lg // Bayangan tombol
+          transition duration-300 ease-in-out // Transisi saat hover
+          text-lg md:text-xl // Ukuran teks tombol
+        ">
+          Lets Get Started!
+        </button>
+      </Link>
     </section>
   );
 };

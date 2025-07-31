@@ -31,7 +31,7 @@ export default function CourseDetailPage({ course_index }: {course_index: string
     <div className="">
       <Navbar />
       <main>
-        <Banner className="h-[257px]">
+        <Banner className="min-h-[257px] h-fit">
           <div className=" flex flex-row px-[120px] w-screen h-fit justify-between items-center">
             <div className="flex flex-col w-fit h-fit gap-[7px]">
               <div className="bg-white w-fit h-fit px-[25px] text-[#354A86] font-semibold font-inter text-[16px] rounded-[14px]">
@@ -115,7 +115,7 @@ export default function CourseDetailPage({ course_index }: {course_index: string
           </div>
         </div>
         <div className="h-fit flex flex-col items-center gap-[24px] py-[75px] bg-[#E7EEFF]">
-          <h2 className="w-fit text-black font-medium font-geologica text-[24px]">
+          <h2 className="w-fit text-black font-medium font-geologica text-[30px]">
             Ready to Upskill?
           </h2>
           <p className="w-fit text-black font-normal font-inter text-[16px] whitespace-pre-line">

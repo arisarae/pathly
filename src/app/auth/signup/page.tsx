@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SignUpWrapper() {
   return (
     <main className="h-screen w-screen flex flex-row">
-      <div className="text-center w-[50vw] p-[48px] bg-conic from-[#445FAC] to-[#7E92CC] content-center justify-items-center font-inter">
+      <div className="text-center w-[50vw] p-[48px] bg-[#5D75BA] bg-conic from-[#445FAC] to-[#7E92CC] content-center justify-items-center font-inter">
         <div className="w-fit h-fit mb-[20px]">
           <p className="text-[#E0E7FF] text-[16px] font-inter font-medium mb-[3px]">
             Welcome to

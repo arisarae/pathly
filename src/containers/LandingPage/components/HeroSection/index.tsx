@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const HeroSection: React.FC = () => {
@@ -38,19 +39,22 @@ const HeroSection: React.FC = () => {
         {/* Line break hanya di layar yang lebih besar */}
         recommendations to land your dream job.
       </p>
-      <button className="
-        bg-[#445FAC] // Warna background tombol
-        hover:bg-[#34495E] // Warna hover tombol
-        text-white // Warna teks tombol
-        font-semibold font-geologica
-        py-3 px-8 md:py-4 md:px-10 // Padding tombol responsif
-        rounded-lg // Sudut melengkung
-        shadow-lg // Bayangan tombol
-        transition duration-300 ease-in-out // Transisi saat hover
-        text-lg md:text-xl // Ukuran teks tombol
-      ">
-        Get Started
-      </button>
+      <Link href={"/auth/signin"}>
+        <button className="
+          bg-[#445FAC] // Warna background tombol
+          hover:bg-[#34495E] // Warna hover tombol
+          text-white // Warna teks tombol
+          font-semibold font-geologica
+          py-3 px-8 md:py-4 md:px-10 // Padding tombol responsif
+          rounded-lg // Sudut melengkung
+          shadow-lg // Bayangan tombol
+          transition duration-300 ease-in-out // Transisi saat hover
+          text-lg md:text-xl // Ukuran teks tombol
+        ">
+          Get Started
+        </button>
+      </Link>
+      
     </section>
   );
 };
